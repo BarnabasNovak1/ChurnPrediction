@@ -127,6 +127,12 @@ def make_predictions(input_df):
         st.plotly_chart(fig_probs, use_container_width=True)
 
 
+    st.markdown("# Model Probabilities")
+    for model, prob in probabilities.items():
+        st.write(f"{model}: {prob:.4f}")
+
+    st.write(f"Average Probability: {avg_probability:.4f}")
+
     return avg_probability
 
 
